@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Painter Website</title>
+  <script src="https://kit.fontawesome.com/4e58b4c2ef.js" crossorigin="anonymous"></script>
+  <!-- EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("5BKNVAjtykYzB38T_"); 
+    })();
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo-title">
+      <img src="Z.png" alt="Logo">
+      <h1>ANGEL BEAST</h1>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="example.html">Artwork</a></li>
+      <li><a href="example2.html">Comic</a></li>
+      <li>
+        <a href="https://www.instagram.com/zonuna.f/" target="_blank" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+            <rect width="24" height="24" rx="5" fill="#E1306C"/>
+            <path d="M12 8.5A3.5 3.5 0 1 0 12 15.5A3.5 3.5 0 1 0 12 8.5Z" stroke="white" stroke-width="1.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+            <rect x="3.75" y="3.75" width="16.5" height="16.5" rx="4.25" stroke="white" stroke-width="1.5"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="hero"></div>
+
+  <div class="hero-thu">
+    <div class="logo-titlee">
+      <img src="Z.png" alt="Logo">
+      <h1>ANGEL BEAST</h1>
+    </div>
+    <p>He thlan khur ata beiseina ngenin,
+Aw thihna, mi pel lul la.
+<br> Ka nunna hi mi zuahsak leh la,
+He thlan thim ata ka chhuah hnu pawhin,
+I hming ka chawi  ang,chatuanin.
+<br>Ka kâah beiseina dawidim a awm laiin,
+Nangin I kut vawtin mi kai tlat si a.
+<br> For me, art is not just about making something beautiful—it’s<br> Aw!!Thihnâ,nangin ka thlarau mi chuh a,
+Ka tisa, kuang ah I hnuhchhiah ta a.</p>
+    <a href="example.html" class="view-work-btn">VIEW MY ARTS</a>
+  </div>
+
+  <div class="hero-comic">
+    <div class="hero-thu">
+      <div class="logo-titlee">
+        <h1>COMIC POSTS</h1>
+      </div>
+      <a href="https://drive.google.com/file/d/1Ik6fEGpHeCgFki8b8WjA9SQN7MG43rlS/view" target="_blank">
+        <img src="comic 1.jpg" alt="Clickable Image" width="200" height="auto">
+      </a>
+      <br>
+      <a href="example2.html" class="view-work-btn">VIEW MY COMICS</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Left Section -->
+    <div class="contact-section">
+      <h1>CONTACT</h1>
+
+      <!-- Contact Form -->
+      <form id="contactForm" onsubmit="sendMail(event)">
+        <div>
+          <label>Name *</label>
+          <input type="text" name="name" placeholder="Enter your name" required>
+        </div>
+        <div>
+          <label>Email *</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div>
+          <label>Subject</label>
+          <input type="text" name="subject" placeholder="Type the subject">
+        </div>
+        <div>
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Type your message here..."></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Right Section -->
+    <div class="image-section"></div>
+  </div>
+
+  <footer>
+    <h2>THE ART OF ZONUN</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/zonuna.f/" target="_blank" aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+          <rect width="24" height="24" rx="5" fill="#E1306C"/>
+          <path d="M12 8.5A3.5 3.5 0 1 0 12 15.5A3.5 3.5 0 1 0 12 8.5Z" stroke="white" stroke-width="1.5"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+          <rect x="3.75" y="3.75" width="16.5" height="16.5" rx="4.25" stroke="white" stroke-width="1.5"/>
+        </svg>
+      </a>
+    </div>
+    <div class="year">
+      &copy; <span id="year"></span> All Rights Reserved
+    </div>
+  </footer>
+
+  <script>
+    // Set current year dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // EmailJS Send Function
+    function sendMail(event) {
+      event.preventDefault();
+      const form = document.getElementById("contactForm");
+
+      emailjs.send("service_vtr369v", "template_xj4qsx1", {
+        name: form.name.value,
+        email: form.email.value,
+        subject: form.subject.value,
+        message: form.message.value
+      })
+      .then(() => {
+        alert("Message sent successfully!");
+        form.reset();
+      })
+      .catch((error) => {
+        alert("Oops! Something went wrong.");
+        console.error(error);
+      });
+    }
+  </script>
+
+</body>
+</html>
