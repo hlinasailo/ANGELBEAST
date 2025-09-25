@@ -1,6 +1,14 @@
-/* Reset */
-body {
+/* Reset and Base Styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: black;
   font-family: Arial, sans-serif;
 }
 
@@ -11,14 +19,15 @@ body {
   justify-content: space-between;
   background-color: black;
   padding: 30px 60px;
-  flex-wrap: wrap; /* allows stacking on smaller screens */
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 /* Logo + Title */
 .logo-title {
   display: flex;
   align-items: center;
-   color: rgb(199, 157, 238);
+  color: rgb(199, 157, 238);
 }
 
 .logo-title img {
@@ -54,52 +63,41 @@ body {
   color: #ffcc00;
 }
 
-/* 🔹 Responsive: For small screens */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .navbar li {
-    margin: 10px 0;
-  }
-
-  .navbar a {
-    font-size: 18px;
-  }
-}
-
+/* Hero Section */
 .hero {
   background-image: url('background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 60vh; /* adjust height as needed */
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
-.hero-thu{
+.hero-thu {
   background-color: rgb(0, 0, 0);
-  width: 100%;
-  height: 50vh; /* adjust height as needed */
-  
-
+  width: 100vw;
+  height: auto;
   text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
+
 .logo-titlee {
   display: flex;
   align-items: center;
   color: rgb(199, 157, 238);
   justify-content: center;
   text-align: center;
-  
+  flex-wrap: wrap;
 }
 
 .logo-titlee img {
@@ -111,31 +109,14 @@ body {
   font-size: 40px;
   margin: 0;
 }
+
 .hero-thu p {
   text-align: center;
   color: #c52972;
   font-size: 25px;
+  margin: 20px 0;
 }
-@media (max-width: 600px) {
-  .hero-thu {
-    padding: 15px 8px;
-  }
-  .logo-titlee img {
-    width: 60px;
-  }
-  .logo-titlee h1 {
-    font-size: 1.1rem;
-  }
-  .hero-thu p {
-    font-size: 0.95rem;
-  }
-  .view-work-btn {
-    width: 50%;
-    box-sizing: border-box;
-    font-size: 0.5rem;
-    padding: 10px 0;
-  }
-}
+
 .view-work-btn {
   display: inline-block;
   padding: 12px 32px;
@@ -155,141 +136,238 @@ body {
   color: #fff;
 }
 
-.hero-comic h2{
-   display: flex;
+.hero-comic {
+  background-color: rgb(22, 22, 22);
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.hero-comic h2 {
+  display: flex;
   align-items: center;
   color: rgb(199, 157, 238);
   justify-content: center;
   text-align: center;
   font-size: 40px;
-
-}
-.hero-comic{
-   background-color: rgb(22, 22, 22);
 }
 
 .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 60vh;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+  width: 100%;
+}
 
-    /* Left side */
-    .contact-section {
-      padding: 10px;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+/* Left side */
+.contact-section {
+  padding: 40px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .contact-section h1 {
-      font-size: 40px;
-      font-weight: bold;
-      color: rgb(131, 66, 192);
-      margin-bottom: 15px;
-    }
+.contact-section h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(131, 66, 192);
+  margin-bottom: 15px;
+}
 
-    .contact-section p {
-      color: #444;
-      margin-bottom: 20px;
-    }
+.contact-section p {
+  color: #444;
+  margin-bottom: 20px;
+}
 
-    .icons {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
+.icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
 
-    .icons a {
-      font-size: 22px;
-      color: #333;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.icons a {
+  font-size: 22px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-    .icons a:hover {
-      color: #f44336;
-    }
+.icons a:hover {
+  color: #f44336;
+}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-    label {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      outline: none;
-      transition: border 0.3s;
-    }
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.3s;
+}
 
-    input:focus, textarea:focus {
-      border-color: #f9b208;
-    }
+input:focus, textarea:focus {
+  border-color: #f9b208;
+}
 
-    button {
-      background: #000;
-      color: #fff;
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+button {
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    button:hover {
-      background: #861c67;
-    }
+button:hover {
+  background: #861c67;
+}
 
-    /* Right side with image */
-    .image-section {
-      background: url('chas.jpg') no-repeat center center/cover;
-      
-    }
+/* Right side with image */
+.image-section {
+  background: url('chas.jpg') no-repeat center center/cover;
+}
 
-    /* Responsive */
-    @media(max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .image-section {
-        display: none;
-      }
-    }
-    footer {
-      background: #8f1c7c;
-      color: #050505;
-      text-align: center;
-      padding: 20px 0;
-    }
-    footer h2 {
-      margin-bottom: 10px;
-    }
-    .social-icons a {
-      color: #fff;
-      font-size: 24px;
-      margin: 20 40px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .social-icons a:hover {
-      color: #f9b208; /* yellow on hover */
-    }
-    .year {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #080808;
-    }
-        .social-icons{
-          padding-bottom: 30px;
-        }
+/* Footer */
+footer {
+  background: #8f1c7c;
+  color: #050505;
+  text-align: center;
+  padding: 20px 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+footer h2 {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f9b208;
+}
+
+.year {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #080808;
+}
+
+.social-icons {
+  padding-bottom: 30px;
+}
+
+/* 🔹 Responsive: For small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    font-size: 18px;
+  }
+
+  .hero-thu {
+    padding: 30px 15px;
+  }
+  
+  .logo-titlee img {
+    height: 60px;
+  }
+  
+  .logo-titlee h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-thu p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .view-work-btn {
+    width: 80%;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-section {
+    display: none;
+  }
+
+  .contact-section {
+    padding: 30px 20px;
+  }
+
+  footer {
+    padding: 15px 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 15px;
+  }
+  
+  .year {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-titlee h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-thu p {
+    font-size: 0.9rem;
+  }
+  
+  .view-work-btn {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
